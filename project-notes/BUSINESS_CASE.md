@@ -32,22 +32,27 @@ Does your product get more valuable as more people use it?
 - Where does the extra value come from as the network grows?
 - As more sellers join the market there will be more art on the market for buyers to buy so it will attract more buyers who will in turn attract more artists. As more people join the app, network effects grow and value for everyone using the app grows as well
 - How would you solve the "empty network" problem at launch?
-- Me personally i have many connections with first nations through my volunteering and extra curricular activities, including connections with prominent Atlantic Canadian Indigenous artists such as Alan Silleboy. So I would work my connections and reach out to as many people as i could to get some artists on the site and then promote the website through social media and around town at events and markets where potential buyers may be.
+- Me personally i have many connections with first nations through my volunteering and extra curricular activities, including connections with prominent Atlantic Canadian Indigenous artists such as Alan Silleboy. So I would work my connections and reach out to as many people as i could to get some artists on the site and then promote the website through social media and around town at events and markets where potential buyers may be. I also incorporated an application window into the website with added features to grow
 - Point to the part of your prototype that shows this.
-- As
+- I  have a tab in the app to apply to sell your art and to refer anyone else to apply to sell their art via a link. (that actually works to bring people to the apply page.)
+- I also added referral bonuses on the app, $15 for every artist you refer who signs up and $25 incentive after your first sale. This is to encourage more and more people to join and bring others to join, very similar to what paypal did when they started.
 
 ## 4. Can it be copied? (the moat question)
 
 Anyone in this class could rebuild your website in a weekend with the same AI tool. So the code is **not** your competitive advantage.
 
 - What about your business is **valuable, rare, hard to imitate and well-organized** (VRIN)?
+- The idea behind my business is one its best attributes. It is very valuable to its customers and rare as well. Not many sites offer exclusively what I am providing. The tech itself may be imitable but a fast follower would still need to poach my consumers and my brand loyalty which makes me hard to imitate.I also provide easy and useful exchange that only grows with more users. I hope that switching costs, loyalty and authenticity would help strengthen my network effects and increase my staying power. I also offer complements on the same site providing a sort of convergence between artwork markets and jewelry markets attracting more buyers and sellers. 
 - What would a competitor with a bigger budget need to copy you, and how long would it take?
+- With a bigger budget they would be able to copy my code rather quickly in a few weeks or months, but my advantage doesn't come from my code it comes from my network effects and my relationships and brand. 
+- They would need a platform, they would need to buy out or poach the artists from my site, or find new artists that didn't join me. If they have a bigger budget they would be able to offer bigger bonuses and incentives to attract my customers as well as lower prices, but this would take time, I would say it would take only a few weeks to months to copy my site but a few years before they could push me out and copy my advantage.
 - Which of your advantages get *stronger* over time (data, network, brand, switching costs)?
+- My network gets the strongest over time, as more people join and exchange with each other my platform grows in value and solidifies itself, this in turn strengthens my staying cost and staying power.
 
 ## 5. Cloud and operations
 
 What would it take to run this for real? Which parts would you buy as cloud services (SaaS, PaaS, IaaS), and what are the risks of relying on them?
-
-## 6. Risks and ethics
+I would likely need to implement an ERP, this would help my platform run smoothly with so many moving parts. I believe a  Saas module system would work very well with my business, one module for payments and financials, one for logistics/ operations, and some extended ERPs for CRM. I would also need a software for data collection as well as significant outside funding to get started up.
+I would also need a secure payment system and shipping
 
 What could go wrong — for your customers, their data, or society? What would you do about it?
