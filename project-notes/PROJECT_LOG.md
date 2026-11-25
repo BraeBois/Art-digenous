@@ -97,6 +97,36 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add a beige website background with thin red and purple stripes and swirls along the sides, behind the page content, without changing artwork or functions.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Now i would like to polish up the website, without changing any of the functions or art work at all! I would like a beige red and purple color scheme on the backround all of the tabs, just the backround. Add thin red and purple stripes and swirles going up and down the sides and BEHIND the text and art”
+- **What we decided:** Apply low-contrast CSS background decoration behind the existing page content and make the header transparent so the design continues across the page. Leave artwork illustrations and all interactions untouched.
+- **What worked:** The background is CSS-only and appears consistently across the single-page views.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add faint grey mountain outlines behind the website content.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Now can you add faint outlines of grey mountains in the background, once again behind everything”
+- **What we decided:** Add a low-opacity CSS-embedded vector outline to the page backdrop, without changing artwork or interactions.
+- **What worked:** The mountain outline sits behind existing page content and the earlier side decoration.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Keep the existing mountain outlines and add larger faint ones at the top of the background, above the artwork.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “I like those, can you keep them and make some bigger ones visible at the top aswell? above the art work”
+- **What we decided:** Add a larger, lighter upper mountain ridge while preserving the original lower ridge and leaving the artwork and site interactions unchanged.
+- **What worked:** Both background layers are CSS-only and fixed behind all page content.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |
