@@ -87,6 +87,16 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add a 10-user versus 10,000-user network-effect comparison to the Our approach page.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Add a page that shows how our product gets more valuable as more people use it. Use fake numbers so we can compare 10 users with 10,000 users. Add this to the our approach page on the website”
+- **What we decided:** Show an illustrative 40% maker / 60% buyer split at both sizes and compare possible cross-side pairings (24 versus 18,750,000). Clearly explain the made-up assumptions and that combinations are not actual users, engagement, purchases, or a forecast.
+- **What worked:** The comparison is part of the existing Our approach network-effect section and adapts to narrow screens.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |
