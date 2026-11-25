@@ -77,6 +77,16 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add several more unique fictional jewelry listings to the Jewelry tab.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Can you add a few more unique jewlery for sale into the jewlery tab”
+- **What we decided:** Add four distinct fictional pieces across earrings, bracelets, and necklaces, with two additional fictional seller profiles and CSS-only concept illustrations.
+- **What worked:** The new items use the existing jewelry category filters, explore search, and save controls.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |

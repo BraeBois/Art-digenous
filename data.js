@@ -60,6 +60,24 @@ const ARTISTS = [
     focus: "Painting",
     initials: "DP",
     tone: "gold"
+  },
+  {
+    id: "finley",
+    name: "Finley Hart",
+    location: "Fictional · Atlantic Canada",
+    bio: "A fictional jewelry maker pairing soft color with simple, sculptural forms.",
+    focus: "Jewelry",
+    initials: "FH",
+    tone: "berry"
+  },
+  {
+    id: "taylor",
+    name: "Taylor Lane",
+    location: "Fictional · Atlantic Canada",
+    bio: "A fictional metalsmith creating small-batch pieces inspired by light on the water.",
+    focus: "Jewelry",
+    initials: "TL",
+    tone: "sea"
   }
 ];
 
@@ -113,6 +131,26 @@ const LISTINGS = [
     id: 10, name: "Tidal Inlet in Blue", category: "Art", description: "A fictional small-format coastal painting in slate blue, warm sand, and a single rust-colored horizon.",
     artistId: "devon", artist: "Devon Pike", location: "Fictional · Atlantic Canada",
     price: "$74", date: "2026-11-04", artworkType: "Coastal", visual: "inlet", visualLabel: "Abstract blue and rust coastal painting"
+  },
+  {
+    id: 11, name: "Berry Glass Drops", category: "Jewelry", jewelryType: "Earrings", description: "Fictional lightweight drop earrings with berry-colored glass and simple brass hooks.",
+    artistId: "finley", artist: "Finley Hart", location: "Fictional · Atlantic Canada",
+    price: "$38", date: "2026-11-23", visual: "berry-drops", visualLabel: "Pair of berry-colored glass drop earrings with brass hooks"
+  },
+  {
+    id: 12, name: "Harbour Thread Bracelet", category: "Jewelry", jewelryType: "Bracelets", description: "A fictional adjustable bracelet with a woven slate-blue cord and a small brushed-metal bead.",
+    artistId: "taylor", artist: "Taylor Lane", location: "Fictional · Atlantic Canada",
+    price: "$32", date: "2026-11-21", visual: "thread-bracelet", visualLabel: "Slate-blue woven cord bracelet with a small metal bead"
+  },
+  {
+    id: 13, name: "Evening Current Pendant", category: "Jewelry", jewelryType: "Necklaces", description: "A fictional pendant featuring a smooth sea-glass-green oval on a fine brass chain.",
+    artistId: "finley", artist: "Finley Hart", location: "Fictional · Atlantic Canada",
+    price: "$59", date: "2026-11-19", visual: "current-pendant", visualLabel: "Sea-glass-green oval pendant on a fine brass chain"
+  },
+  {
+    id: 14, name: "Tidal Arc Studs", category: "Jewelry", jewelryType: "Earrings", description: "A fictional pair of small, curved brass studs with a matte finish for everyday wear.",
+    artistId: "taylor", artist: "Taylor Lane", location: "Fictional · Atlantic Canada",
+    price: "$28", date: "2026-11-17", visual: "arc-studs", visualLabel: "Pair of small curved matte-brass stud earrings"
   }
 ];
 
