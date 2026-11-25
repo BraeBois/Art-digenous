@@ -1,63 +1,32 @@
-// ============================================================
-// app.js — what your site DOES.
-// Plain JavaScript, no libraries, no installs.
-// It uses STARTUP and LISTINGS from data.js (loaded first).
-// ============================================================
-
 (function () {
   "use strict";
 
-  // ----------------------------------------------------------
-  // 1. Saving things in the browser (localStorage).
-  //    This only remembers things on THIS browser on THIS device.
-  //    Your teammates and your customers will NOT see it.
-  //    A real product would need a server and a database for that.
-  // ----------------------------------------------------------
-  const storage = {
-    get: function (key, fallback) {
-      try {
-        const saved = localStorage.getItem(key);
-        return saved === null ? fallback : JSON.parse(saved);
-      } catch (error) {
-        return fallback; // storage blocked or broken: just carry on
-      }
-    },
-    set: function (key, value) {
-      try {
-        localStorage.setItem(key, JSON.stringify(value));
-      } catch (error) {
-        // storage blocked (e.g. private window): ignore
-      }
-    }
-  };
+  const savedKey = "artDigenousSavedIds";
+  let savedIds = [];
+  let activeJewelryType = "All";
 
-  let savedIds = storage.get("savedIds", []);
+  try {
+    const storedIds = JSON.parse(localStorage.getItem(savedKey) || "[]");
+    if (Array.isArray(storedIds)) savedIds = storedIds.filter(Number.isInteger);
+  } catch (error) {
+    console.warn("Saved items are available only for this visit because browser storage could not be read.", error);
+  }
 
-  // ----------------------------------------------------------
-  // 2. Put the startup's name and pitch on the page.
-  // ----------------------------------------------------------
-  document.title = STARTUP.name;
-  document.getElementById("brand-name").textContent = STARTUP.name;
+  document.title = STARTUP.name + " — art with roots";
   document.getElementById("tagline").textContent = STARTUP.tagline;
   document.getElementById("pitch").textContent = STARTUP.pitch;
 
-  // ----------------------------------------------------------
-  // 3. Views: show one section at a time, based on the #link in the address bar.
-  // ----------------------------------------------------------
   function showView() {
     const requested = (window.location.hash || "#home").slice(1);
-    const views = document.querySelectorAll("[data-view]");
-    const exists = Array.prototype.some.call(views, function (view) {
-      return view.id === requested;
-    });
-    const current = exists ? requested : "home";
+    const views = Array.from(document.querySelectorAll("[data-view]"));
+    const current = views.some(function (view) { return view.id === requested; }) ? requested : "home";
 
     views.forEach(function (view) {
       view.hidden = view.id !== current;
     });
 
-    document.querySelectorAll("nav a").forEach(function (link) {
-      if (link.getAttribute("href") === "#" + current) {
+    document.querySelectorAll(".site-header nav a").forEach(function (link) {
+      if (link.hash === "#" + current) {
         link.setAttribute("aria-current", "page");
       } else {
         link.removeAttribute("aria-current");
@@ -67,75 +36,182 @@
     window.scrollTo(0, 0);
   }
 
-  window.addEventListener("hashchange", showView);
+  function createArtwork(item) {
+    const artwork = document.createElement("div");
+    artwork.className = "artwork artwork-" + item.visual;
+    artwork.setAttribute("role", "img");
+    artwork.setAttribute("aria-label", item.visualLabel);
+    return artwork;
+  }
 
-  // ----------------------------------------------------------
-  // 4. Explore page: build one card per listing.
-  //    We use textContent (not innerHTML) so text is always shown
-  //    as text — a basic security habit.
-  // ----------------------------------------------------------
-  const grid = document.getElementById("listing-grid");
-  const searchBox = document.getElementById("search-box");
-  const emptyMessage = document.getElementById("empty-message");
-  const savedCount = document.getElementById("saved-count");
+  function updateSavedCount() {
+    const savedCount = document.getElementById("saved-count");
+    savedCount.textContent = savedIds.length
+      ? "Saved on this device: " + savedIds.length + ". Saved items are private to this browser."
+      : "Save a piece to keep track of it on this device.";
+  }
 
-  function makeCard(item) {
+  function makeListingCard(item) {
     const card = document.createElement("article");
-    card.className = "card";
+    card.className = "listing-card";
+    card.appendChild(createArtwork(item));
 
+    const details = document.createElement("div");
+    details.className = "listing-details";
+
+    const meta = document.createElement("div");
+    meta.className = "listing-meta";
     const tag = document.createElement("span");
     tag.className = "tag";
-    tag.textContent = item.category;
+    tag.textContent = item.category === "Jewelry" ? item.jewelryType : "Artwork";
+    const price = document.createElement("span");
+    price.className = "price";
+    price.textContent = item.price;
+    meta.append(tag, price);
 
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.textContent = item.name;
+    const description = document.createElement("p");
+    description.className = "listing-description";
+    description.textContent = item.description;
 
-    const text = document.createElement("p");
-    text.textContent = item.description;
+    const byline = document.createElement("p");
+    byline.className = "listing-byline";
+    byline.textContent = item.artist + " · " + item.location;
 
-    const isSaved = savedIds.indexOf(item.id) !== -1;
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "button secondary";
-    button.textContent = isSaved ? "Saved ✓" : "Save";
-    button.setAttribute("aria-pressed", isSaved ? "true" : "false");
-    button.addEventListener("click", function () {
+    const saveButton = document.createElement("button");
+    const isSaved = savedIds.includes(item.id);
+    saveButton.type = "button";
+    saveButton.className = "save-button";
+    saveButton.dataset.saveId = String(item.id);
+    saveButton.setAttribute("aria-pressed", isSaved ? "true" : "false");
+    saveButton.textContent = isSaved ? "Saved ✓" : "Save";
+    saveButton.addEventListener("click", function () {
       toggleSaved(item.id);
     });
 
-    card.append(tag, title, text, button);
+    details.append(meta, title, description, byline, saveButton);
+    card.appendChild(details);
     return card;
   }
 
   function toggleSaved(id) {
-    if (savedIds.indexOf(id) === -1) {
-      savedIds.push(id);
-    } else {
-      savedIds = savedIds.filter(function (savedId) { return savedId !== id; });
+    savedIds = savedIds.includes(id)
+      ? savedIds.filter(function (savedId) { return savedId !== id; })
+      : savedIds.concat(id);
+
+    let storageUnavailable = false;
+    try {
+      localStorage.setItem(savedKey, JSON.stringify(savedIds));
+    } catch (error) {
+      storageUnavailable = true;
+      console.warn("Saved items will be kept only until this page is closed because browser storage could not be written.", error);
     }
-    storage.set("savedIds", savedIds);
+
     renderListings();
+    updateSavedCount();
+    if (storageUnavailable) {
+      document.getElementById("saved-count").textContent =
+        "Saved for this visit only; browser storage is unavailable.";
+    }
+    const newButton = document.querySelector('[data-save-id="' + id + '"]');
+    if (newButton) newButton.focus();
   }
 
+  const grid = document.getElementById("listing-grid");
+  const searchBox = document.getElementById("search-box");
+  const categoryFilter = document.getElementById("category-filter");
+
   function renderListings() {
-    const query = searchBox.value.trim().toLowerCase();
+    const query = searchBox.value.trim().toLocaleLowerCase();
+    const category = categoryFilter.value;
     const matches = LISTINGS.filter(function (item) {
-      const text = (item.name + " " + item.category + " " + item.description).toLowerCase();
-      return text.indexOf(query) !== -1;
+      const searchable = [
+        item.name, item.category, item.jewelryType || "", item.description,
+        item.artist, item.location
+      ].join(" ").toLocaleLowerCase();
+      return (category === "all" || item.category === category) && searchable.includes(query);
     });
 
-    grid.replaceChildren.apply(grid, matches.map(makeCard));
-    emptyMessage.hidden = matches.length > 0;
-    savedCount.textContent = savedIds.length === 0
-      ? "Tap Save on anything you like."
-      : "You've saved " + savedIds.length + " item(s) on this device.";
+    grid.replaceChildren.apply(grid, matches.map(makeListingCard));
+    document.getElementById("empty-message").hidden = matches.length > 0;
+    document.getElementById("results-count").textContent =
+      matches.length + (matches.length === 1 ? " piece" : " pieces");
+    updateSavedCount();
+  }
+
+  function renderArtists() {
+    const artistGrid = document.getElementById("artist-grid");
+    artistGrid.replaceChildren.apply(artistGrid, ARTISTS.map(function (artist) {
+      const card = document.createElement("article");
+      card.className = "artist-card";
+      const portrait = document.createElement("div");
+      portrait.className = "artist-portrait portrait-" + artist.tone;
+      portrait.setAttribute("aria-hidden", "true");
+      portrait.textContent = artist.initials;
+
+      const focus = document.createElement("span");
+      focus.className = "tag";
+      focus.textContent = artist.focus;
+      const name = document.createElement("h2");
+      name.textContent = artist.name;
+      const location = document.createElement("p");
+      location.className = "artist-location";
+      location.textContent = artist.location;
+      const bio = document.createElement("p");
+      bio.textContent = artist.bio;
+      card.append(portrait, focus, name, location, bio);
+      return card;
+    }));
+  }
+
+  function renderHome() {
+    const latestGrid = document.getElementById("latest-grid");
+    const newest = LISTINGS.slice().sort(function (a, b) {
+      return b.date.localeCompare(a.date);
+    }).slice(0, 3);
+    latestGrid.replaceChildren.apply(latestGrid, newest.map(makeListingCard));
+  }
+
+  function renderJewelryFilters() {
+    const filters = document.getElementById("jewelry-filters");
+    filters.replaceChildren.apply(filters, JEWELRY_TYPES.map(function (type) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "filter-chip";
+      button.textContent = type;
+      button.setAttribute("aria-pressed", activeJewelryType === type ? "true" : "false");
+      button.addEventListener("click", function () {
+        activeJewelryType = type;
+        renderJewelryFilters();
+        renderJewelry();
+        const selected = Array.from(filters.querySelectorAll("button")).find(function (chip) {
+          return chip.textContent === type;
+        });
+        if (selected) selected.focus();
+      });
+      return button;
+    }));
+  }
+
+  function renderJewelry() {
+    const grid = document.getElementById("jewelry-grid");
+    const items = LISTINGS.filter(function (item) {
+      return item.category === "Jewelry" &&
+        (activeJewelryType === "All" || item.jewelryType === activeJewelryType);
+    });
+    grid.replaceChildren.apply(grid, items.map(makeListingCard));
+    document.getElementById("jewelry-empty").hidden = items.length > 0;
   }
 
   searchBox.addEventListener("input", renderListings);
+  categoryFilter.addEventListener("change", renderListings);
+  window.addEventListener("hashchange", showView);
 
-  // ----------------------------------------------------------
-  // 5. Start up.
-  // ----------------------------------------------------------
+  renderHome();
   renderListings();
+  renderArtists();
+  renderJewelryFilters();
+  renderJewelry();
   showView();
 })();

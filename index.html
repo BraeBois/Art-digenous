@@ -3,91 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YourStartup</title>
-  <meta name="description" content="A student startup prototype for BSAD 281.">
+  <meta name="description" content="A fictional student prototype exploring a marketplace for Atlantic Indigenous art and makers.">
+  <meta name="theme-color" content="#f3ede3">
+  <title>Art-Digenous — art with roots</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- =========================================================
-       HEADER: logo text + navigation.
-       Each link points to a "view" further down the page (#home, #explore, #about).
-       ========================================================= -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="#home" id="brand-name">YourStartup</a>
-    <nav aria-label="Main">
-      <a href="#home">Home</a>
+    <a class="brand" href="#home" aria-label="Art-Digenous home">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>art-digenous<span class="brand-period">.</span></span>
+    </a>
+    <nav aria-label="Main navigation">
       <a href="#explore">Explore</a>
-      <a href="#about">About</a>
+      <a href="#artists">Artists</a>
+      <a href="#jewelry">Jewelry</a>
+      <a href="#about">Our approach</a>
     </nav>
+    <a class="sell-link" href="#sell">Share your work <span aria-hidden="true">↗</span></a>
   </header>
 
-  <main>
-
-    <!-- =======================================================
-         VIEW 1: HOME — what you do, for whom, and why it matters.
-         ======================================================= -->
+  <main id="main-content">
     <section id="home" data-view>
       <div class="hero">
-        <p class="eyebrow">Prototype</p>
-        <h1 id="tagline">One sentence that says what your startup does.</h1>
-        <p class="lead" id="pitch">
-          Who is your customer, what problem do they have, and why is your
-          solution better than what they use today?
-        </p>
-        <a class="button" href="#explore">See it in action</a>
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A fictional marketplace concept · Atlantic Canada</p>
+          <h1 id="tagline"></h1>
+          <p class="lead" id="pitch"></p>
+          <div class="hero-actions">
+            <a class="button" href="#explore">Explore the collection <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#artists">Meet the makers <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="hero-note">Every maker and artwork shown here is fictional.</p>
+        </div>
+        <div class="hero-art" role="img" aria-label="Abstract, fictional artwork using layered sand, plum, and rust shapes">
+          <span class="hero-art-sun"></span>
+          <span class="hero-art-horizon"></span>
+          <span class="hero-art-ribbon"></span>
+          <span class="hero-art-caption">Small works, lasting stories <span>01 / 06</span></span>
+        </div>
       </div>
 
-      <div class="steps">
-        <div class="card">
-          <h2>1. Step one</h2>
-          <p>Describe the first thing a customer does.</p>
+      <div class="intro-row">
+        <div>
+          <p class="eyebrow">A place to begin</p>
+          <h2>Find the work.<br><em>Know who made it.</em></h2>
         </div>
-        <div class="card">
-          <h2>2. Step two</h2>
-          <p>Describe what happens next.</p>
-        </div>
-        <div class="card">
-          <h2>3. Step three</h2>
-          <p>Describe the result the customer gets.</p>
-        </div>
+        <p class="intro-copy">A concept for bringing independent Atlantic Indigenous artists and people who value their work into one thoughtful, easy-to-explore space.</p>
       </div>
+
+      <section class="section-block" aria-labelledby="latest-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Fresh from the studio</p><h2 id="latest-title">Recently added</h2></div>
+          <a class="text-link" href="#explore">See all work <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="grid listing-grid" id="latest-grid"></div>
+      </section>
+
+      <section class="maker-callout">
+        <div class="callout-symbol" aria-hidden="true">✳</div>
+        <div><p class="eyebrow">For makers</p><h2>Your work deserves to be found.</h2><p>A future version could help artists share their work and reach new audiences—on their own terms.</p></div>
+        <a class="button button-light" href="#sell">How selling could work <span aria-hidden="true">→</span></a>
+      </section>
     </section>
 
-    <!-- =======================================================
-         VIEW 2: EXPLORE — a list built from the fake data in data.js.
-         ======================================================= -->
     <section id="explore" data-view hidden>
-      <h1>Explore</h1>
-      <p class="muted">These examples are fake. They come from <code>data.js</code>.</p>
-
-      <label class="search">
-        <span>Search</span>
-        <input type="search" id="search-box" placeholder="Type to filter…">
-      </label>
-
-      <p class="muted" id="saved-count"></p>
-      <div class="grid" id="listing-grid"></div>
-      <p class="empty" id="empty-message" hidden>Nothing matches your search.</p>
+      <div class="page-intro"><p class="eyebrow">The collection</p><h1>Made with meaning.</h1><p>Browse fictional concept listings. Real creators should control how their work and cultural context are represented.</p></div>
+      <div class="filter-bar">
+        <label class="search"><span class="sr-only">Search artworks</span><input type="search" id="search-box" placeholder="Search art, artist, or place…" autocomplete="off"></label>
+        <label class="select-label"><span class="sr-only">Filter by category</span><select id="category-filter"><option value="all">All work</option><option value="Art">Art</option><option value="Jewelry">Jewelry</option></select></label>
+      </div>
+      <p class="results-note" id="results-count" aria-live="polite"></p>
+      <div class="grid listing-grid" id="listing-grid"></div>
+      <p class="empty" id="empty-message" hidden>No work found. Try a different search.</p>
+      <p class="saved-note" id="saved-count" aria-live="polite"></p>
     </section>
 
-    <!-- =======================================================
-         VIEW 3: ABOUT — your team and your story.
-         ======================================================= -->
+    <section id="artists" data-view hidden>
+      <div class="page-intro"><p class="eyebrow">People before products</p><h1>Meet the makers.</h1><p>These are fictional profile concepts, not real artists or representations of any specific community.</p></div>
+      <div class="grid artist-grid" id="artist-grid"></div>
+      <aside class="ethics-note"><span aria-hidden="true">✳</span><p><strong>In a real marketplace, identity is never inferred.</strong> Artists choose what to share, how to describe their work, and whether to include community or cultural context.</p></aside>
+    </section>
+
+    <section id="jewelry" data-view hidden>
+      <div class="page-intro"><p class="eyebrow">Made to be worn</p><h1>Jewelry, by type.</h1><p>Explore fictional product concepts. Filter by form to find what you’re looking for.</p></div>
+      <div class="chip-list" id="jewelry-filters" role="group" aria-label="Filter jewelry by type"></div>
+      <div class="grid listing-grid" id="jewelry-grid"></div>
+      <p class="empty" id="jewelry-empty" hidden>No jewelry in this category yet.</p>
+    </section>
+
     <section id="about" data-view hidden>
-      <h1>About us</h1>
-      <p>Tell the story of why your team started this company.</p>
-      <p>Use first names only, or no names at all — this site is public.</p>
+      <div class="page-intro"><p class="eyebrow">The idea behind the idea</p><h1>A better path from maker to admirer.</h1><p>Art-Digenous is a student concept for a two-sided marketplace: a discovery space shaped around artists and the people looking for their work.</p></div>
+      <div class="idea-grid">
+        <article class="idea-card"><span class="idea-number">01</span><h2>The challenge</h2><p>Independent makers can be hard to discover beyond their existing circles. Buyers may not know where to find artists or learn about work directly from its maker.</p></article>
+        <article class="idea-card"><span class="idea-number">02</span><h2>The concept</h2><p>A focused directory and marketplace could bring discovery, maker profiles, and work together—while giving artists control over their stories.</p></article>
+        <article class="idea-card"><span class="idea-number">03</span><h2>A possible model</h2><p>A real business might earn a transparent fee on completed sales, with clear artist consent and fair terms. No sales or fees happen in this prototype.</p></article>
+      </div>
+      <div class="network-panel">
+        <div><p class="eyebrow">The network effect</p><h2>More makers. More reasons to visit.</h2><p>Artists bring original work and audiences; more choice can make the platform more useful to buyers. Reaching the first buyers and makers is the hard part.</p></div>
+        <div class="network-metrics" aria-label="Illustrative marketplace scenarios, not actual users">
+          <div><span class="metric-value">10</span><span class="metric-label">makers to start</span><span class="metric-caption">A small collection needs hands-on outreach.</span></div>
+          <span class="metric-arrow" aria-hidden="true">→</span>
+          <div><span class="metric-value">100</span><span class="metric-label">makers to grow</span><span class="metric-caption">More variety may bring repeat discovery.</span></div>
+        </div>
+        <p class="scenario-note">Illustrative scenarios only—not real users, market research, or a forecast.</p>
+      </div>
+      <div class="responsibility-grid">
+        <div><p class="eyebrow">Before anything goes live</p><h2>Built with care, not assumptions.</h2></div>
+        <ul><li>Indigenous-led consultation and governance</li><li>Artist consent, fair compensation, and transparent fees</li><li>Strong privacy, secure payments, and dispute support</li><li>Moderation against misrepresentation and unauthorized listings</li></ul>
+      </div>
     </section>
 
+    <section id="sell" data-view hidden>
+      <div class="sell-panel">
+        <span class="sell-icon" aria-hidden="true">✳</span>
+        <p class="eyebrow">For artists and makers</p>
+        <h1>Share your work, on your terms.</h1>
+        <p>This prototype does not accept listings, collect personal details, or process payments. A real marketplace would need secure artist onboarding, consent-based profiles, fair policies, and payment infrastructure.</p>
+        <div class="prototype-status"><span class="status-dot"></span> Selling and payments are not available in this prototype.</div>
+        <a class="button" href="#home">Return to the collection <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
   </main>
 
-  <!-- Keep this footer. Your site must say it is a student project. -->
   <footer class="site-footer">
-    <p>Student prototype for BSAD 281 at St. Francis Xavier University. Not a real company — all data is fictional.</p>
+    <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">A</span><span>art-digenous<span class="brand-period">.</span></span></a>
+    <p>A student prototype for BSAD 281 at St. Francis Xavier University. Not a real company; all people and listings are fictional. No sales, accounts, or payments.</p>
+    <a href="#about">Our approach</a>
   </footer>
-
-  <!-- Scripts load in this order: data first, then the code that uses it. -->
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
