@@ -5,22 +5,36 @@ Your prototype shows *what* the product looks like. This document explains *why*
 ## 1. The idea
 
 - **Customer:** Who exactly is it for?
+- As my site creates a 2 sided market with cross side benefits there are 2 types of customers
+- The customers are; the buyers, People buying artwork for money
+- And the sellers, people selling their artwork for profit
 - **Problem:** What problem do they have today, and how do they solve it now?
-- **Solution:** What does your product do differently or better?
+- The problem i am seeking to solve stems from recognition. Many super talented artists cannot sell any art because there is no where for them to sell it. They way they solve it now is by travelling lost distances to art galleries/ displays which costs a lot of money. Or by bringing their art to farmers markets where there are buyers but many are not interested and there are other sellers with similar products creating competiton.
+- **Solution:** What does your product do differently or better? My products creates a platform for these artists to gain exposure and sell their artwork and provides a platform for people who are interested to view and buy the art. I will act as a sort of broker between the two parties and provide safe and secure transactions as well as shipping.
 - **Revenue:** How does the company make money?
-
+We will make money by charging a small percentage commission on every sale based on size. There is potential to sell ad space in the future as well.
 ## 2. Where IT creates value
 
 Which parts of the value chain does your product change, and how? Which course concepts apply (e.g. scale, distribution channels, differentiation, data, switching costs)?
+
+My product takes over the outbound logistic portion of the value chain, I change it and simplify it for my customers, 
+I also change and take control of marketing and sales for my apps customers, we promote and sell the products for them, without actually taking possession of the goods.
+We also take care of the support side, handling and passing on complaints, refund requests and providing support after the sale. As well as a FAQ drop down.
+
+
 
 ## 3. Network effects
 
 Does your product get more valuable as more people use it?
 
 - Is it a **one-sided** or **two-sided** market? Who are the sides?
+- This is a 2 sided market, Side 1 is the buyers of art and side 2 is the artists/sellers
 - Where does the extra value come from as the network grows?
+- As more sellers join the market there will be more art on the market for buyers to buy so it will attract more buyers who will in turn attract more artists. As more people join the app, network effects grow and value for everyone using the app grows as well
 - How would you solve the "empty network" problem at launch?
+- Me personally i have many connections with first nations through my volunteering and extra curricular activities, including connections with prominent Atlantic Canadian Indigenous artists such as Alan Silleboy. So I would work my connections and reach out to as many people as i could to get some artists on the site and then promote the website through social media and around town at events and markets where potential buyers may be.
 - Point to the part of your prototype that shows this.
+- As
 
 ## 4. Can it be copied? (the moat question)
 
