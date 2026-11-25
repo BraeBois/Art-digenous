@@ -22,6 +22,7 @@
       <a href="#jewelry">Jewelry</a>
       <a href="#about">Our approach</a>
       <a href="#support">Support</a>
+      <a href="#apply">Apply to sell</a>
     </nav>
     <a class="sell-link" href="#sell">Share your work <span aria-hidden="true">↗</span></a>
   </header>
@@ -72,6 +73,17 @@
 
     <section id="explore" data-view hidden>
       <div class="page-intro"><p class="eyebrow">The collection</p><h1>Made with meaning.</h1><p>Browse fictional concept listings. Real creators should control how their work and cultural context are represented.</p></div>
+      <aside class="artist-promo" aria-labelledby="artist-promo-title">
+        <div>
+          <p class="eyebrow">For artists and makers</p>
+          <h2 id="artist-promo-title">Interested in sharing your work?</h2>
+          <p>See how a future artist application could work. Applications are not open in this prototype.</p>
+        </div>
+        <div class="artist-promo-actions">
+          <a class="button button-light" href="#apply">Apply to sell <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#apply">Know an artist? Refer them</a>
+        </div>
+      </aside>
       <div class="filter-bar">
         <label class="search"><span class="sr-only">Search artworks</span><input type="search" id="search-box" placeholder="Search art, artist, or place…" autocomplete="off"></label>
         <label class="select-label"><span class="sr-only">Filter by category</span><select id="category-filter"><option value="all">All work</option><option value="Art">Artwork</option><option value="Jewelry">Jewelry</option></select></label>
@@ -205,6 +217,46 @@
           </details>
         </div>
       </section>
+    </section>
+
+    <section id="apply" data-view hidden>
+      <div class="page-intro"><p class="eyebrow">For artists and makers</p><h1>Apply to sell.</h1><p>A future Art-Digenous marketplace could help artists share their work and reach new audiences. Here’s what a respectful application process might involve.</p></div>
+      <div class="application-status" role="note">
+        <strong>Applications are not open in this prototype.</strong>
+        <p>This site does not collect applications, contact details, or artwork submissions. Please do not enter or send personal information here.</p>
+      </div>
+      <div class="apply-steps">
+        <article class="idea-card">
+          <span class="idea-number">01</span>
+          <h2>Share on your terms</h2>
+          <p>Artists would choose how to describe themselves and their work, including what personal, community, or cultural context—if any—they want to share.</p>
+        </article>
+        <article class="idea-card">
+          <span class="idea-number">02</span>
+          <h2>Introduce your work</h2>
+          <p>A future application might ask for artwork details, materials, availability, pricing, and images the artist has permission to use.</p>
+        </article>
+        <article class="idea-card">
+          <span class="idea-number">03</span>
+          <h2>Review before publishing</h2>
+          <p>Any real process would need clear consent, transparent terms and fees, and artist-led review before a profile or listing goes live.</p>
+        </article>
+      </div>
+      <div class="apply-footer">
+        <p>These are design considerations, not active eligibility rules or a real application process.</p>
+        <a class="button" href="#explore">Explore the fictional collection <span aria-hidden="true">→</span></a>
+      </div>
+      <aside class="refer-artist" aria-labelledby="refer-artist-title">
+        <p class="eyebrow">Help artists find us</p>
+        <h2 id="refer-artist-title">Know an artist who might be interested?</h2>
+        <p>Share this invitation page with them. Referrals are not tracked, and no contact information is collected.</p>
+        <div class="referral-link-row">
+          <label class="sr-only" for="referral-link">Artist application invitation link</label>
+          <input id="referral-link" type="url" readonly>
+          <button id="copy-referral-link" class="button" type="button">Copy invite link</button>
+        </div>
+        <p id="referral-status" class="referral-status" aria-live="polite">Anyone with the link can view the application information.</p>
+      </aside>
     </section>
 
     <section id="sell" data-view hidden>

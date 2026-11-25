@@ -147,6 +147,36 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add an artist application information page for makers interested in selling through the future marketplace.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Please add an additional Window for artists who wish to sell their artwork on the website to apply”
+- **What we decided:** Add an Apply to sell page describing a possible artist-led application and review process. Keep it informational only; the prototype must not collect personal details or submissions.
+- **What worked:** The page is available from the top navigation and explains the hypothetical application steps and current prototype limitations.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add an Explore-page promotion linking artists to the application information.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Add a pop up for it on the explore page as well to increase exposure”
+- **What we decided:** Use a prominent, non-blocking callout with a link to Apply to sell, so it remains visible without interrupting collection browsing.
+- **What worked:** The Explore callout directs makers to the informational application page and notes that applications are not open in the prototype.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add a way for visitors to refer interested artists to the application information.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “And add a refer an artist feature aswell to get more sellers on the app”
+- **What we decided:** Provide a copyable link to the Apply to sell page rather than collecting the artist’s contact information or tracking referrals.
+- **What worked:** Visitors can share the application information directly; if automatic copying is unavailable, the link is selected for manual copying.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |

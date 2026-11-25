@@ -349,6 +349,11 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .callout-symbol { color: #d8ad81; font-size: 2.5rem; }
 .button-light { border-color: var(--sand); background: var(--sand); color: var(--plum-dark); white-space: nowrap; }
 .button-light:hover { border-color: white; background: white; color: var(--plum-dark); }
+.artist-promo { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 0 0 25px; padding: 23px 27px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 8px 24px rgba(41, 35, 31, .08); }
+.artist-promo .eyebrow { margin-bottom: 5px; }
+.artist-promo h2 { margin: 0 0 4px; font-family: Georgia, serif; font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 500; line-height: 1.2; }
+.artist-promo p:not(.eyebrow) { margin: 0; color: var(--muted); font-size: .84rem; }
+.artist-promo-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 
 .page-intro { max-width: 760px; padding: 73px 0 37px; }
 .page-intro h1, .sell-panel h1 {
@@ -406,6 +411,20 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .support-faq-list details { border: 1px solid var(--line); background: white; }
 .support-faq-list summary { padding: 14px 16px; color: var(--plum-dark); cursor: pointer; font-weight: 650; }
 .support-faq-list details p { margin: 0; padding: 0 16px 16px; color: var(--muted); font-size: .86rem; }
+.application-status { max-width: 860px; margin: 0 0 22px; padding: 16px 18px; border-left: 3px solid var(--rust); background: var(--sand); }
+.application-status strong { color: var(--plum-dark); }
+.application-status p { margin: 4px 0 0; color: var(--muted); font-size: .85rem; }
+.apply-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.apply-steps .idea-card { min-height: 250px; }
+.apply-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; padding: 20px; background: var(--sand); }
+.apply-footer p { margin: 0; color: var(--muted); font-size: .84rem; }
+.refer-artist { max-width: 860px; margin-top: 28px; padding: 25px; border: 1px solid var(--line); background: var(--paper); }
+.refer-artist h2 { margin: 0 0 7px; font-family: Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; line-height: 1.15; }
+.refer-artist > p:not(.eyebrow) { color: var(--muted); font-size: .86rem; }
+.referral-link-row { display: flex; gap: 10px; margin-top: 16px; }
+.referral-link-row input { flex: 1; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 2px; background: white; color: var(--muted); font-size: .82rem; }
+.referral-link-row .button { flex-shrink: 0; cursor: pointer; }
+.referral-status { min-height: 1.4em; margin: 9px 0 0; color: var(--muted); font-size: .76rem; }
 .artist-grid { padding: 10px 0 34px; }
 .artist-card { padding: 0 0 19px; border: 1px solid var(--line); background: white; }
 .artist-portrait {
@@ -492,6 +511,8 @@ h1, h2, h3, p { overflow-wrap: break-word; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .listing-detail-layout { grid-template-columns: 1fr; }
   .detail-artwork .artwork { min-height: 420px; }
+  .apply-steps { grid-template-columns: 1fr; }
+  .apply-steps .idea-card { min-height: auto; }
   .site-footer { grid-template-columns: auto 1fr; }
   .site-footer > a:last-child { grid-column: 2; }
 }
@@ -517,6 +538,9 @@ h1, h2, h3, p { overflow-wrap: break-word; }
   .maker-callout .button { grid-column: 1; }
   .callout-symbol { font-size: 2rem; }
   .page-intro { padding: 48px 0 26px; }
+  .artist-promo { align-items: flex-start; flex-direction: column; padding: 20px; }
+  .referral-link-row { flex-direction: column; }
+  .referral-link-row .button { align-self: flex-start; }
   .support-tabs { gap: 2px; }
   .support-tab { flex: 1; padding: 10px 7px; font-size: .82rem; }
   .support-panel { padding: 22px 18px; }

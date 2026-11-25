@@ -251,11 +251,35 @@
     });
   }
 
+  function setupArtistReferral() {
+    const referralLink = document.getElementById("referral-link");
+    const applicationUrl = new URL(window.location.href);
+    applicationUrl.hash = "apply";
+    referralLink.value = applicationUrl.href;
+
+    const copyButton = document.getElementById("copy-referral-link");
+    const status = document.getElementById("referral-status");
+    copyButton.addEventListener("click", async function () {
+      try {
+        if (!navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
+          throw new Error("Clipboard access is unavailable.");
+        }
+        await navigator.clipboard.writeText(referralLink.value);
+        status.textContent = "Invite link copied. Share it directly with an artist.";
+      } catch (error) {
+        referralLink.focus();
+        referralLink.select();
+        status.textContent = "Automatic copying is unavailable. The link is selected so you can copy it manually.";
+      }
+    });
+  }
+
   searchBox.addEventListener("input", renderListings);
   categoryFilter.addEventListener("change", renderListings);
   window.addEventListener("hashchange", showView);
 
   setupSupportTabs();
+  setupArtistReferral();
   renderHome();
   renderListings();
   renderArtists();
