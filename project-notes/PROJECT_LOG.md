@@ -208,6 +208,16 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Change the hypothetical artist referral bonus.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Change the referral to 15$”
+- **What we decided:** Set the hypothetical referral bonus to $15 per artist signup, while keeping the notice that referrals are not tracked and bonuses are not paid in the prototype.
+- **What worked:** The application page now displays the updated referral amount.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |
