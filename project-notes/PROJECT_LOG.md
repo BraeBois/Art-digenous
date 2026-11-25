@@ -177,6 +177,16 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Set the artist referral link to the public GitHub Pages application URL.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “For the link in that tab can you make this the lin kinstead ‘https://braebois.github.io/Art-digenous/#apply’”
+- **What we decided:** Copy the exact URL provided by the user when someone uses the referral feature.
+- **What worked:** The referral field now points to the public Apply to sell page rather than the current browser address.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |

@@ -253,9 +253,7 @@
 
   function setupArtistReferral() {
     const referralLink = document.getElementById("referral-link");
-    const applicationUrl = new URL(window.location.href);
-    applicationUrl.hash = "apply";
-    referralLink.value = applicationUrl.href;
+    referralLink.value = "https://braebois.github.io/Art-digenous/#apply";
 
     const copyButton = document.getElementById("copy-referral-link");
     const status = document.getElementById("referral-status");
