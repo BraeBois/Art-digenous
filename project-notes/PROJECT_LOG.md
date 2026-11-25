@@ -137,6 +137,16 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add a Support page with refunds, returns, and FAQ tabs.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Can you add another window for support, in that window have tabs for refunds and returns, and generate a few FAQs for a FAQ question”
+- **What we decided:** Make a Support page with Refunds, Returns, and FAQs tabs. Clearly state the marketplace is only a prototype and has no real orders, payments, refunds, returns, or support service.
+- **What worked:** Visitors can switch between the support topics and expand common questions.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |

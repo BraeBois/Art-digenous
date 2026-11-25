@@ -217,10 +217,45 @@
     document.getElementById("artwork-empty").hidden = items.length > 0;
   }
 
+  function setupSupportTabs() {
+    const tablist = document.querySelector('[aria-label="Support topics"]');
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+
+    function activate(tab, moveFocus) {
+      tabs.forEach(function (item) {
+        const selected = item === tab;
+        item.setAttribute("aria-selected", selected ? "true" : "false");
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
+      });
+      if (moveFocus) tab.focus();
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        activate(tab, false);
+      });
+    });
+
+    tablist.addEventListener("keydown", function (event) {
+      const currentIndex = tabs.indexOf(document.activeElement);
+      let nextIndex = currentIndex;
+      if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % tabs.length;
+      if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = tabs.length - 1;
+      if (nextIndex !== currentIndex) {
+        event.preventDefault();
+        activate(tabs[nextIndex], true);
+      }
+    });
+  }
+
   searchBox.addEventListener("input", renderListings);
   categoryFilter.addEventListener("change", renderListings);
   window.addEventListener("hashchange", showView);
 
+  setupSupportTabs();
   renderHome();
   renderListings();
   renderArtists();
