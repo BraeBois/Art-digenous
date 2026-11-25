@@ -141,7 +141,8 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 
 | Date | What went wrong | What we tried | What finally fixed it |
 |---|---|---|---|
-| | | | |
+| Nov 6, 2026 | The first AI-generated artwork looked generic and did not reliably show the requested animals or culturally appropriate Indigenous artwork. | Asked for more traditionally Indigenous art and specified subjects such as whales, canoes, teepees, and northern lights. | Stopped presenting generated imagery as culturally authentic; used fictional, nature-focused descriptions and abstract CSS illustrations instead. |
+| Nov 6, 2026 | An attempt to add more color to the home page went wrong; undoing it rolled the project back to an earlier checkpoint and lost later changes. | Undid the styling changes and recovered the earlier work from the checkpoint. | Restored the original code and returned the project to the intended state. |
 
 ## What a real version would need
 
