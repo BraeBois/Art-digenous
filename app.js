@@ -1,16 +1,7 @@
 (function () {
   "use strict";
 
-  const savedKey = "artDigenousSavedIds";
-  let savedIds = [];
   let activeJewelryType = "All";
-
-  try {
-    const storedIds = JSON.parse(localStorage.getItem(savedKey) || "[]");
-    if (Array.isArray(storedIds)) savedIds = storedIds.filter(Number.isInteger);
-  } catch (error) {
-    console.warn("Saved items are available only for this visit because browser storage could not be read.", error);
-  }
 
   document.title = STARTUP.name + " — art with roots";
   document.getElementById("tagline").textContent = STARTUP.tagline;
@@ -19,7 +10,15 @@
   function showView() {
     const requested = (window.location.hash || "#home").slice(1);
     const views = Array.from(document.querySelectorAll("[data-view]"));
-    const current = views.some(function (view) { return view.id === requested; }) ? requested : "home";
+    const listingMatch = requested.match(/^listing-(\d+)$/);
+    const selectedListing = listingMatch
+      ? LISTINGS.find(function (item) { return item.id === Number(listingMatch[1]); })
+      : null;
+    const current = selectedListing
+      ? "listing"
+      : views.some(function (view) { return view.id === requested; }) ? requested : "home";
+
+    if (selectedListing) renderListingDetail(selectedListing);
 
     views.forEach(function (view) {
       view.hidden = view.id !== current;
@@ -34,6 +33,7 @@
     });
 
     window.scrollTo(0, 0);
+    if (selectedListing) document.getElementById("detail-title").focus();
   }
 
   function createArtwork(item) {
@@ -42,13 +42,6 @@
     artwork.setAttribute("role", "img");
     artwork.setAttribute("aria-label", item.visualLabel);
     return artwork;
-  }
-
-  function updateSavedCount() {
-    const savedCount = document.getElementById("saved-count");
-    savedCount.textContent = savedIds.length
-      ? "Saved on this device: " + savedIds.length + ". Saved items are private to this browser."
-      : "Save a piece to keep track of it on this device.";
   }
 
   function makeListingCard(item) {
@@ -79,43 +72,55 @@
     byline.className = "listing-byline";
     byline.textContent = item.artist + " · " + item.location;
 
-    const saveButton = document.createElement("button");
-    const isSaved = savedIds.includes(item.id);
-    saveButton.type = "button";
-    saveButton.className = "save-button";
-    saveButton.dataset.saveId = String(item.id);
-    saveButton.setAttribute("aria-pressed", isSaved ? "true" : "false");
-    saveButton.textContent = isSaved ? "Saved ✓" : "Save";
-    saveButton.addEventListener("click", function () {
-      toggleSaved(item.id);
+    const viewButton = document.createElement("button");
+    viewButton.type = "button";
+    viewButton.className = "button view-button";
+    viewButton.textContent = "View";
+    viewButton.setAttribute("aria-label", "View " + item.name);
+    viewButton.addEventListener("click", function () {
+      window.location.hash = "listing-" + item.id;
     });
 
-    details.append(meta, title, description, byline, saveButton);
+    details.append(meta, title, description, byline, viewButton);
     card.appendChild(details);
     return card;
   }
 
-  function toggleSaved(id) {
-    savedIds = savedIds.includes(id)
-      ? savedIds.filter(function (savedId) { return savedId !== id; })
-      : savedIds.concat(id);
+  function renderListingDetail(item) {
+    const artist = ARTISTS.find(function (profile) {
+      return profile.id === item.artistId;
+    });
 
-    let storageUnavailable = false;
-    try {
-      localStorage.setItem(savedKey, JSON.stringify(savedIds));
-    } catch (error) {
-      storageUnavailable = true;
-      console.warn("Saved items will be kept only until this page is closed because browser storage could not be written.", error);
+    document.getElementById("detail-artwork").replaceChildren(createArtwork(item));
+    document.getElementById("detail-category").textContent =
+      item.category === "Jewelry" ? item.jewelryType : "Artwork · " + item.artworkType;
+    document.getElementById("detail-title").textContent = item.name;
+    document.getElementById("detail-price").textContent = item.price;
+    document.getElementById("detail-description").textContent = item.description;
+    document.getElementById("detail-back").href = item.category === "Jewelry" ? "#jewelry" : "#artwork";
+
+    const artistName = document.getElementById("detail-artist-name");
+    const artistLocation = document.getElementById("detail-artist-location");
+    const artistFocus = document.getElementById("detail-artist-focus");
+    const artistBio = document.getElementById("detail-artist-bio");
+    const artistPortrait = document.getElementById("detail-artist-portrait");
+
+    if (!artist) {
+      artistName.textContent = item.artist;
+      artistLocation.textContent = item.location;
+      artistFocus.textContent = "Artist profile unavailable";
+      artistBio.textContent = "No fictional artist profile is available for this listing.";
+      artistPortrait.className = "artist-portrait";
+      artistPortrait.textContent = "";
+      return;
     }
 
-    renderListings();
-    updateSavedCount();
-    if (storageUnavailable) {
-      document.getElementById("saved-count").textContent =
-        "Saved for this visit only; browser storage is unavailable.";
-    }
-    const newButton = document.querySelector('[data-save-id="' + id + '"]');
-    if (newButton) newButton.focus();
+    artistName.textContent = artist.name;
+    artistLocation.textContent = artist.location;
+    artistFocus.textContent = artist.focus;
+    artistBio.textContent = artist.bio;
+    artistPortrait.className = "artist-portrait portrait-" + artist.tone;
+    artistPortrait.textContent = artist.initials;
   }
 
   const grid = document.getElementById("listing-grid");
@@ -137,7 +142,6 @@
     document.getElementById("empty-message").hidden = matches.length > 0;
     document.getElementById("results-count").textContent =
       matches.length + (matches.length === 1 ? " piece" : " pieces");
-    updateSavedCount();
   }
 
   function renderArtists() {

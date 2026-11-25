@@ -127,6 +127,16 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Replace listing Save buttons with View buttons that open the artwork and its fictional artist information.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Can we remove that and replace it with a button that reads ‘View’ and when someone presses it it just opens up the artwork, with the information about it and the artists name and info”
+- **What we decided:** Make a detail view for both artwork and jewelry, showing the existing illustration, listing description and sample price, and the matching fictional artist profile. Remove the now-unused local save controls.
+- **What worked:** View buttons open listing details; a return link goes back to the relevant Artwork or Jewelry tab.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |
