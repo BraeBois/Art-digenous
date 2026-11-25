@@ -414,6 +414,10 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .application-status { max-width: 860px; margin: 0 0 22px; padding: 16px 18px; border-left: 3px solid var(--rust); background: var(--sand); }
 .application-status strong { color: var(--plum-dark); }
 .application-status p { margin: 4px 0 0; color: var(--muted); font-size: .85rem; }
+.artist-incentive { max-width: 860px; margin: 0 0 18px; padding: 20px 22px; border: 1px solid #d5c6b4; background: linear-gradient(110deg, #f8f2e8, #f1e7eb); }
+.artist-incentive .eyebrow { margin-bottom: 5px; }
+.artist-incentive h2 { margin: 0 0 5px; color: var(--plum-dark); font-family: Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 500; line-height: 1.15; }
+.artist-incentive p:last-child { max-width: 720px; margin: 0; color: var(--muted); font-size: .84rem; }
 .apply-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .apply-steps .idea-card { min-height: 250px; }
 .apply-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; padding: 20px; background: var(--sand); }

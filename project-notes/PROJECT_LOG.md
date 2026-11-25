@@ -187,6 +187,27 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add a monetary incentive example to encourage artists to apply.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “On the application window can you add an monetary incentive for artists to get them to sign up”
+  2. “One-time sign-up bonus — 25$ bonus after first sale”
+- **What we decided:** Show a hypothetical $25 bonus after an artist’s first completed sale, clearly labeled as an example and not an active or guaranteed offer.
+- **What worked:** The application page explains the incentive while making clear that the prototype does not process sales or pay bonuses.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add a referral bonus to the artist application page.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “And add a 25$ referral bonus for each person they get to sign up”
+- **What we decided:** Show a hypothetical $25 bonus for each artist who signs up through a referral, while explaining that referrals and sign-ups are not tracked and no bonuses are paid by the prototype.
+- **What worked:** The referral incentive is visible alongside the existing hypothetical first-sale bonus.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |
