@@ -253,6 +253,18 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .artwork-cuff { background: #d7c3a8; }
 .artwork-cuff::before { width: 170px; height: 115px; top: 23%; left: calc(50% - 85px); border: 12px solid #a87b4f; border-bottom-color: transparent; border-radius: 50%; transform: rotate(-15deg); }
 .artwork-cuff::after { width: 25px; height: 25px; top: 62%; left: calc(50% + 42px); border-radius: 50%; background: #70445f; }
+.artwork-aurora { background: linear-gradient(165deg, #303949 0 52%, #65747a 52% 54%, #a17d77 54%); }
+.artwork-aurora::before { width: 120%; height: 52%; top: 10%; left: -9%; transform: rotate(-12deg); border-radius: 50%; background: linear-gradient(115deg, transparent 12%, #84977c 37%, #899184 53%, #82667f 76%, transparent 92%); }
+.artwork-aurora::after { width: 75%; height: 24%; right: -9%; bottom: -7%; transform: rotate(-8deg); border-radius: 50%; background: #d3b99a; }
+.artwork-whale { background: linear-gradient(180deg, #b9c9c4 0 40%, #647f86 40% 43%, #344d5c 43% 100%); }
+.artwork-whale::before { width: 48%; height: 24%; top: 43%; left: 28%; transform: rotate(-7deg); border-radius: 55% 48% 48% 55%; background: #9eb4b1; }
+.artwork-whale::after { width: 20%; height: 22%; top: 38%; left: 21%; transform: rotate(-27deg); clip-path: polygon(100% 50%, 0 0, 27% 50%, 0 100%); background: #9eb4b1; }
+.artwork-wolf { background: linear-gradient(165deg, #d7d4ca 0 42%, #a4a99e 42% 48%, #798681 48% 72%, #49585b 72%); }
+.artwork-wolf::before { width: 34%; height: 48%; top: 20%; left: 33%; clip-path: polygon(10% 5%, 37% 27%, 68% 18%, 94% 0, 83% 61%, 62% 92%, 33% 100%, 12% 72%); background: #687478; }
+.artwork-wolf::after { width: 40%; height: 15%; right: -4%; bottom: 5%; transform: rotate(-12deg); border-radius: 50%; background: #c3b39f; }
+.artwork-inlet { background: linear-gradient(160deg, #d3c4af 0 38%, #7c8690 38% 42%, #47626e 42% 75%, #a65e4d 75%); }
+.artwork-inlet::before { width: 58%; height: 35%; top: 40%; left: 10%; transform: rotate(-14deg); border-radius: 55% 45% 0 0; background: #bcc1b5; }
+.artwork-inlet::after { width: 42%; height: 20%; right: -5%; bottom: 2%; transform: rotate(12deg); border-radius: 50%; background: #d2b798; }
 .listing-details { padding: 16px 16px 17px; border: 1px solid var(--line); border-top: 0; }
 .listing-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .tag { display: inline-block; padding: 3px 8px; background: var(--sand); color: var(--plum-dark); font-size: .68rem; font-weight: 700; }
@@ -328,6 +340,9 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .portrait-plum { background: linear-gradient(135deg, #967787, #523249); }
 .portrait-rust { background: linear-gradient(135deg, #d3a18a, #904a3c); }
 .portrait-olive { background: linear-gradient(135deg, #a4a187, #55634f); }
+.portrait-blue { background: linear-gradient(135deg, #8b9b9b, #3f5865); }
+.portrait-clay { background: linear-gradient(135deg, #c59c80, #715252); }
+.portrait-gold { background: linear-gradient(135deg, #c4a66f, #685946); }
 .artist-card > :not(.artist-portrait) { margin-right: 17px; margin-left: 17px; }
 .artist-card h2 { margin-top: 9px; margin-bottom: 2px; font-family: Georgia, serif; font-size: 1.5rem; font-weight: 500; }
 .artist-card p { color: var(--muted); font-size: .84rem; }

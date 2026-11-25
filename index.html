@@ -17,6 +17,7 @@
     </a>
     <nav aria-label="Main navigation">
       <a href="#explore">Explore</a>
+      <a href="#artwork">Artwork</a>
       <a href="#artists">Artists</a>
       <a href="#jewelry">Jewelry</a>
       <a href="#about">Our approach</a>
@@ -72,7 +73,7 @@
       <div class="page-intro"><p class="eyebrow">The collection</p><h1>Made with meaning.</h1><p>Browse fictional concept listings. Real creators should control how their work and cultural context are represented.</p></div>
       <div class="filter-bar">
         <label class="search"><span class="sr-only">Search artworks</span><input type="search" id="search-box" placeholder="Search art, artist, or place…" autocomplete="off"></label>
-        <label class="select-label"><span class="sr-only">Filter by category</span><select id="category-filter"><option value="all">All work</option><option value="Art">Art</option><option value="Jewelry">Jewelry</option></select></label>
+        <label class="select-label"><span class="sr-only">Filter by category</span><select id="category-filter"><option value="all">All work</option><option value="Art">Artwork</option><option value="Jewelry">Jewelry</option></select></label>
       </div>
       <p class="results-note" id="results-count" aria-live="polite"></p>
       <div class="grid listing-grid" id="listing-grid"></div>
@@ -91,6 +92,12 @@
       <div class="chip-list" id="jewelry-filters" role="group" aria-label="Filter jewelry by type"></div>
       <div class="grid listing-grid" id="jewelry-grid"></div>
       <p class="empty" id="jewelry-empty" hidden>No jewelry in this category yet.</p>
+    </section>
+
+    <section id="artwork" data-view hidden>
+      <div class="page-intro"><p class="eyebrow">Paintings and works on paper</p><h1>Artwork.</h1><p>Browse fictional concept paintings and illustrations featuring whales, wolves, northern lights, coastal scenes, and abstract color studies. These nature-focused examples do not claim to represent any specific Indigenous community or cultural design.</p></div>
+      <div class="grid listing-grid" id="artwork-grid"></div>
+      <p class="empty" id="artwork-empty" hidden>No artwork in this subject yet.</p>
     </section>
 
     <section id="about" data-view hidden>

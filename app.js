@@ -63,7 +63,7 @@
     meta.className = "listing-meta";
     const tag = document.createElement("span");
     tag.className = "tag";
-    tag.textContent = item.category === "Jewelry" ? item.jewelryType : "Artwork";
+    tag.textContent = item.category === "Jewelry" ? item.jewelryType : item.artworkType;
     const price = document.createElement("span");
     price.className = "price";
     price.textContent = item.price;
@@ -127,7 +127,7 @@
     const category = categoryFilter.value;
     const matches = LISTINGS.filter(function (item) {
       const searchable = [
-        item.name, item.category, item.jewelryType || "", item.description,
+        item.name, item.category, item.jewelryType || "", item.artworkType || "", item.description,
         item.artist, item.location
       ].join(" ").toLocaleLowerCase();
       return (category === "all" || item.category === category) && searchable.includes(query);
@@ -204,6 +204,15 @@
     document.getElementById("jewelry-empty").hidden = items.length > 0;
   }
 
+  function renderArtwork() {
+    const grid = document.getElementById("artwork-grid");
+    const items = LISTINGS.filter(function (item) {
+      return item.category === "Art";
+    });
+    grid.replaceChildren.apply(grid, items.map(makeListingCard));
+    document.getElementById("artwork-empty").hidden = items.length > 0;
+  }
+
   searchBox.addEventListener("input", renderListings);
   categoryFilter.addEventListener("change", renderListings);
   window.addEventListener("hashchange", showView);
@@ -213,5 +222,6 @@
   renderArtists();
   renderJewelryFilters();
   renderJewelry();
+  renderArtwork();
   showView();
 })();

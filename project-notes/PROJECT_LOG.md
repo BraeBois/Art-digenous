@@ -56,6 +56,27 @@ Session — [Nov 25 2026] — driver: [Brae + Copilot]
 - **What broke, and how we fixed it:** No issues encountered during implementation.
 - **Committed?** no — not requested.
 
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Add more fictional sellers and listings, and add an artwork browsing tab alongside jewelry.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Replace the sample listings in `data.js` with 10 realistic but fake examples that fit our startup.”
+  2. “I would like more fictional sellers and more fictional artwork on the site. Also it should not just be jewlery but also paintings so please add another tab onto the website for artwork, centre it around whales, wolves, teepees and the northern lights. structure it the same way as the current jewlery tab please.”
+- **What we decided:** The catalog now has 10 fictional listings, including paintings and jewelry, and the artist page has six fictional sellers. Artwork has its own subject filters, matching the jewelry filters. We used abstract CSS illustrations and kept the descriptions clear that the examples are fictional. We did not include teepees: they are not representative of Atlantic Indigenous communities, and adding them as a generic Indigenous art motif could misrepresent cultures.
+- **What worked:** The artwork filters cover whales, wolves, northern lights, coastal scenes, and abstract work; the Explore page still searches across the full catalog.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
+Session — [Nov 25 2026] — driver: [Brae + Copilot]
+
+- **Goal for this session:** Simplify the artwork page by removing its subject filter buttons.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. “Very good, i like that. Can you just remove the filters for whales, wolves, northern lights, coastal, and abstract. Keep the artwork, just remove the filter buttons”
+- **What we decided:** Keep every artwork listing visible on the Artwork tab; leave Jewelry filters unchanged.
+- **What worked:** The artwork page now shows the full collection without subject filter buttons.
+- **What broke, and how we fixed it:** No issues encountered during implementation.
+- **Committed?** no — not requested.
+
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |
