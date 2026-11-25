@@ -53,6 +53,12 @@ Anyone in this class could rebuild your website in a weekend with the same AI to
 
 What would it take to run this for real? Which parts would you buy as cloud services (SaaS, PaaS, IaaS), and what are the risks of relying on them?
 I would likely need to implement an ERP, this would help my platform run smoothly with so many moving parts. I believe a  Saas module system would work very well with my business, one module for payments and financials, one for logistics/ operations, and some extended ERPs for CRM. I would also need a software for data collection as well as significant outside funding to get started up.
-I would also need a secure payment system and shipping
+I would also need a secure payment system and secure shipping. The benefit about ERPs is that they are scalable so i can start small and eventually work my way up and buy more and more modules.
+These can be very costly and difficult and lengthy to set up which is hard for an emerging business. And then we would be completely reliant on other businesses, and there would likely be repeating fees associated with using Saas.
 
 What could go wrong — for your customers, their data, or society? What would you do about it?
+If I choose to implement an ERP system and then they went out of business or I needed to stop using them, then I would have to go through the entire implementation process again and have to pay again. In addition if I used an ERP all of my data ad my customers data and payment information would be available if there was a security breach either through me or if someone breached the software provider. To protect my customers I would only ask for the necessary data and use encryption on any payment details to further protect them.
+
+
+I used Copilot and github Artificial intelligence to create my website
+I also used Chat GPT and Claude AI to assist with brainstorming before picking an idea as well as to assist with the ideating the final product. I also used Chat GPT to help strengthen and point out weak spots in my Business case.
